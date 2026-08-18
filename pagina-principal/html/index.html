@@ -1,0 +1,355 @@
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Atlas - Assistente Virtual Residencial</title>
+    <link rel="stylesheet" href="../css/atlas.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <header class="header">
+        <div class="logo">
+          <div class="logo-icon"><button class="logo2"src="usuario.html">🤖</button></div>
+          <h1>Atlas</h1>
+        </div>
+        <div class="status">
+          <span class="status-indicator online"></span>
+          <span>Online</span>
+        </div>
+        
+        
+
+
+      </header>
+<!-- Main Content -->
+<div class="main-content">
+  <!-- Left Panel - Chat Interface -->
+  <div class="chat-panel">
+    <div class="panel-header">
+      <h2>Chat Atlas</h2>
+    </div>
+
+    <div class="chat-messages" id="chatMessages">
+      <div class="message assistant">
+        <div class="avatar">🤖</div>
+        <div class="message-content">
+          <p>
+            Olá! Sou a Atlas, sua assistente virtual. Como posso ajudar
+            você hoje?
+          </p>
+          <small
+            >Experimente comandos como: "acender luz da sala", "adicionar
+            arroz ao carrinho", "navegar até a padaria", "qual a
+            temperatura?"</small
+          >
+        </div>
+      </div>
+      <div class="message user">
+        <div class="avatar">👤</div>
+        <div class="message-content">
+          <p>Ligue a luz da sala</p>
+        </div>
+      </div>
+      <div class="message assistant">
+        <div class="avatar">🤖</div>
+        <div class="message-content">
+          <p>Acendendo a luz da sala</p>
+        </div>
+      </div>
+      <div class="message user">
+        <div class="avatar">👤</div>
+        <div class="message-content">
+          <p>Atlas navegar até o Shopping</p>
+        </div>
+      </div>
+      <div class="message assistant">
+        <div class="avatar">🤖</div>
+        <div class="message-content">
+          <p>
+            Navegando até o shopping. Distância: 2.5 km, tempo estimado:
+            10 minutos de carro
+          </p>
+        </div>
+      </div>
+      <div class="message user">
+        <div class="avatar">👤</div>
+        <div class="message-content">
+          <p>Adicione um arroz ao meu carrinho de compras</p>
+        </div>
+      </div>
+      <div class="message assistant">
+        <div class="avatar">🤖</div>
+        <div class="message-content">
+          <p>Seu carrinho está vazio</p>
+        </div>
+      </div>
+      <div class="message user">
+        <div class="avatar">👤</div>
+        <div class="message-content">
+          <p>Atlas adiciona um arroz no meu carrinho</p>
+        </div>
+      </div>
+      <div class="message assistant">
+        <div class="avatar">🤖</div>
+        <div class="message-content">
+          <p>Arroz 5kg adicionado ao carrinho por R$ 25.90</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="chat-input-container">
+      <button class="voice-btn" id="voiceBtn" title="Clique para falar">
+        <span class="mic-icon">🎤</span>
+      </button>
+      <input
+        type="text"
+        id="chatInput"
+        placeholder="Digite ou clique no microfone para falar..."
+      />
+      <button class="send-btn" id="sendBtn">Enviar</button>
+    </div>
+  </div>
+
+  <!-- Right Panel - Control Panel -->
+  <div class="control-panel">
+    <div class="panel-header">
+      <h2>Controle de Dispositivos</h2>
+    </div>
+
+    <!-- Lighting Control -->
+    <div class="control-section">
+      <h3>💡 Iluminação</h3>
+      <div class="devices-grid">
+        <div class="device-card active" data-device="luz-sala">
+          <div class="device-icon">💡</div>
+          <div class="device-info">
+            <span class="device-name">Sala</span>
+            <span class="device-status off on">Ligada</span>
+          </div>
+          <button class="toggle-btn active" data-device="luz-sala">
+            <span class="toggle-slider"></span>
+          </button>
+        </div>
+
+        <div class="device-card" data-device="luz-quarto">
+          <div class="device-icon">💡</div>
+          <div class="device-info">
+            <span class="device-name">Quarto principal</span>
+            <span class="device-status off">Desligada</span>
+          </div>
+          <button class="toggle-btn" data-device="luz-quarto" onclick="">
+            <span class="toggle-slider"></span>
+          </button>
+        </div>
+
+        <div class="device-card" data-device="luz-cozinha">
+          <div class="device-icon">💡</div>
+          <div class="device-info">
+            <span class="device-name">Cozinha</span>
+            <span class="device-status off">Desligada</span>
+          </div>
+          <button class="toggle-btn" data-device="luz-cozinha">
+            <span class="toggle-slider"></span>
+          </button>
+        </div>
+        <a href="luz.html">mais...</a>
+      </div>
+    </div>
+
+    <!-- Climate Control -->
+    <div class="control-section">
+      <h3>🌡️ Clima</h3>
+      <div class="climate-control">
+        <div class="temperature-display">
+          <span class="temp-value" id="currentTemp">21</span>
+          <span class="temp-unit">°C</span>
+        </div>
+        <div class="climate-controls">
+          <button class="temp-btn" id="tempDown">-</button>
+          <button class="temp-btn" id="tempUp">+</button>
+        </div>
+        <div class="ac-status" id="acStatus">
+          Ar condicionado ligado (resfriando)
+        </div>
+      </div>
+    </div>
+
+    <!-- Security -->
+    <div class="control-section">
+      <h3>🔒 Segurança</h3>
+      <div class="security-panel">
+        <div class="security-status" id="securityStatus">
+          <span class="security-icon">✓</span>
+          <span>Sistema Ativo</span>
+        </div>
+        <div class="camera-grid">
+          <div class="camera-feed">
+            <div class="camera-placeholder">
+              <video id="camera" autoplay ></video>
+              <script src="../js/camesa.js"></script>
+            </div>
+            
+            <span class="camera-status active">Ativa</span>
+          </div>
+          <div class="camera-feed">
+            <div class="camera-placeholder">📹 Câmera Quintal</div>
+            <span class="camera-status active">Ativa</span>
+          </div>
+        </div>
+        <button class="alarm-btn" id="alarmBtn">🚨 Testar Alarme</button>
+      </div>
+    </div>
+
+    <!-- Music Player -->
+    <div class="control-section">
+      <h3>🎵 Música</h3>
+      <div class="music-player">
+        <div class="now-playing" id="nowPlaying">Música pausada ⏸️</div>
+        <div class="player-controls">
+          <button class="player-btn" id="playBtn">▶️</button>
+          <button class="player-btn" id="pauseBtn">⏸️</button>
+          <button class="player-btn" id="nextBtn">⏭️</button>
+        </div>
+      </div>
+    </div>
+
+<!-- Shopping Cart -->
+<div class="control-section">
+  <h3>🛒 Carrinho de Compras</h3>
+  <div class="shopping-section">
+    <div class="cart-summary">
+      <div class="cart-info">
+        <span class="cart-count" id="cartCount">0 itens</span>
+        <span class="cart-total" id="cartTotal">R$ 0.00</span>
+      </div>
+      <button class="view-cart-btn" id="viewCartBtn">
+        Ver Carrinho
+      </button>
+    </div>
+
+    <div class="quick-add">
+      <input
+        type="text"
+        id="productInput"
+        placeholder="Diga o produto..."
+      />
+      <button class="add-btn" id="addProductBtn">Adicionar</button>
+    </div>
+
+    <div class="cart-items" id="cartItems"></div>
+
+    <!-- Novo botão azul -->
+    <button class="checkout-btn" id="checkoutBtn">
+      Finalizar Compra
+    </button>
+  </div>
+</div>
+    <!-- GPS Navigation -->
+    <div class="control-section">
+      <h3>🗺️ Navegação GPS</h3>
+      <div class="gps-section">
+        <div class="location-display">
+          <div class="current-location" id="currentLocation">
+            📍 Localização: Aguardando GPS...
+          </div>
+        </div>
+        <div class="navigation-input">
+          <input
+            type="text"
+            id="destinationInput"
+            placeholder="Para onde deseja ir?"
+          />
+          <button class="navigate-btn" id="navigateBtn">Navegar</button>
+        </div>
+        <div class="route-info active" id="routeInfo">
+          <div class="route-details">
+            <h4>🎯 Destino: o shopping</h4>
+            <div class="route-detail-item">
+              <span>Distância:</span>
+              <strong>2.5 km</strong>
+            </div>
+            <div class="route-detail-item">
+              <span>Tempo estimado:</span>
+              <strong>10 minutos de carro</strong>
+            </div>
+            <div
+              style="
+                margin-top: 10px;
+                padding: 10px;
+                background: #e3f2fd;
+                border-radius: 5px;
+                text-align: center;
+              "
+            >
+              🧭 Navegação iniciada
+            </div>
+          </div>
+        </div>
+        <button class="get-location-btn" id="getLocationBtn">
+          📍 Obter Localização
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Shopping Cart Modal -->
+<div class="modal" id="cartModal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2>🛒 Meu Carrinho</h2>
+      <button class="close-modal" id="closeModal">×</button>
+    </div>
+    <div class="modal-body" id="modalCartItems">
+      <p class="empty-cart">Seu carrinho está vazio</p>
+    </div>
+    <div class="modal-footer">
+      <div class="modal-total">
+        <span>Total:</span>
+        <span class="modal-total-value" id="modalTotal">R$ 0,00</span>
+      </div>
+      <button class="checkout-btn" id="checkoutBtn">
+        Finalizar Compra
+      </button>
+      <button class="clear-cart-btn" id="clearCartBtn">
+        Limpar Carrinho
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Educational Section -->
+<div class="educational-section">
+  <h2>📚 Área Educativa</h2>
+  <div class="educational-grid" href="alfabetizacao.html">
+    <div class="edu-card" href="alfabetizacao.html">
+      <div class="edu-icon">📖</div>
+      <a href="alfabetizacao.html" class="edu-icon" id="edu-icon" type="submit"> <h4>Alfabetização</h4></a>
+      <p>Aprenda o alfabeto com a Atlas</p>
+    </div>
+    <div class="edu-card">
+      <div class="edu-icon">🔢</div>
+      <a href="mat.html" class="edu-icon"> <h4>Matematica basica</h4> </a>
+      <p>Conte e calcule com diversão</p>
+    </div>
+    <div class="edu-card">
+      <div class="edu-icon">🎨</div>
+      <h4>Cores e Formas</h4>
+      <p>Identifique cores e formas</p>
+    </div>
+    <div class="edu-card">
+      <div class="edu-icon">⏰</div>
+      <h4>Horas</h4>
+      <p>Aprenda a ler o relógio</p>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- Audio for TTS -->
+<audio id="atlasAudio" style="display: none"></audio>
+
+<script src="../js/atlas.js"></script>
+</body>
+</html>
