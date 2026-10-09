@@ -112,7 +112,7 @@ body {
     transform: translateX(22px);
 }
 
-button[type="button"] {
+.button {
     background-color: white;
     color: #764ba2;
     border: none;
@@ -122,6 +122,6 @@ button[type="button"] {
 }
 
 /* Efeito ao passar o mouse (hover) */
-button[type="button"]:hover {
+.button:hover {
     background-color: #764ba2;
 }
