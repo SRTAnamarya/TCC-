@@ -11,7 +11,7 @@ a{
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     
-        background-image: url('../images/10547365-fundo-gradiente-purpura-claro-escuro-escuro-gratis-foto.jpg');
+        background-image: url('/pagina-principal/css/10547365-fundo-gradiente-purpura-claro-escuro-escuro-gratis-foto.jpg');
         background-size: cover; /* Ajusta o tamanho para cobrir a tela */
         background-repeat: no-repeat; /* Não repete a imagem */
         background-position: center; /* Centraliza a imagem */

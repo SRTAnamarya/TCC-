@@ -1,4 +1,16 @@
 /* Control Panel */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+        background-image: url('/pagina-principal/css/10547365-fundo-gradiente-purpura-claro-escuro-escuro-gratis-foto.jpg');
+        background-size: cover; /* Ajusta o tamanho para cobrir a tela */
+        background-repeat: no-repeat; /* Não repete a imagem */
+        background-position: center; /* Centraliza a imagem */
+        background-attachment: fixed; /* Mantém a imagem fixa ao rolar (opcional) */
+    
+      
+}
 .control-panel {
     max-height: 700px;
     overflow-y: auto;
@@ -98,4 +110,18 @@
 
 .toggle-btn.active .toggle-slider {
     transform: translateX(22px);
+}
+
+button[type="button"] {
+    background-color: white;
+    color: #764ba2;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Efeito ao passar o mouse (hover) */
+button[type="button"]:hover {
+    background-color: #764ba2;
 }
